@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 /**
  * Created by HunJin on 2016-02-16.
+ *
+ * fail
  */
 public class Problem1002 {
     public static void main(String[] args) {
