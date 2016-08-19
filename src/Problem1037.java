@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * Created by HunJin on 2016-08-19.
  *
@@ -20,7 +24,52 @@
  * 4 2
  */
 public class Problem1037 {
-    public static void main(String[] args) {
-        
+    BufferedReader br;
+    public static void main(String[] args) throws Exception{
+        Problem1037 main = new Problem1037();
+        main.solve();
+    }
+
+    public int iRead() throws Exception {
+        return Integer.parseInt(readWord());
+    }
+
+    public int iChange(String a) throws Exception {
+        return Integer.parseInt(a);
+    }
+
+    void solve() throws Exception{
+        br = new BufferedReader(new InputStreamReader(System.in));
+        int count = iRead();
+        int init = iRead();
+        int max, min;
+        max = init;
+        min = init;
+        for(int i=1;i<count;i++) {
+            int readNum = iRead();
+            if(max < readNum) {
+                max = readNum;
+            }
+            if(min > readNum) {
+                min = readNum;
+            }
+        }
+
+        System.out.println(max * min);
+    }
+
+    public String readWord() throws IOException {
+        StringBuilder b = new StringBuilder();
+        int c;
+        c = br.read();
+        while (c >= 0 && c <= ' ')
+            c = br.read();
+        if (c < 0)
+            return "";
+        while (c > ' ') {
+            b.append((char) c);
+            c = br.read();
+        }
+        return b.toString();
     }
 }
